@@ -34,7 +34,7 @@ class ZImport extends Module
     {
         $this->name       = 'zimport';
         $this->tab        = 'Tools';
-        $this->version    = '1.3.0';
+        $this->version    = '1.5.0';
         $this->author     = 'zapalm';
         $this->module_tab = 'zimportadmin';
 
