@@ -2,16 +2,21 @@
 /**
  * Enhanced import tool: module for PrestaShop 1.3
  *
- * @author      zapalm <zapalm@ya.ru>
- * @copyright   (c) 2010, zapalm
- * @link        http://prestashop.modulez.ru/en/administrative-tools/14-enhanced-import-tool.html Module's homepage
- * @license     http://opensource.org/licenses/afl-3.0.php Academic Free License (AFL 3.0)
+ * @author    Maksim T. <zapalm@yandex.com>
+ * @copyright 2010 Maksim T.
+ * @link      https://prestashop.modulez.ru/en/import-and-export-data/14-enhanced-import-tool.html The module's homepage
+ * @license   https://opensource.org/licenses/afl-3.0.php Academic Free License (AFL 3.0)
  */
 
 if (!defined('_CAN_LOAD_FILES_')) {
     exit;
 }
 
+/**
+ * Module ZImport.
+ *
+ * @author Maksim T. <zapalm@yandex.com>
+ */
 class ZImport extends Module
 {
     /** The product ID of the module on its homepage. */

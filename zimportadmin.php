@@ -2,10 +2,10 @@
 /**
  * Enhanced import tool: module for PrestaShop 1.3
  *
- * @author      zapalm <zapalm@ya.ru>
- * @copyright   (c) 2010, zapalm
- * @link        http://prestashop.modulez.ru/en/administrative-tools/14-enhanced-import-tool.html Module's homepage
- * @license     http://opensource.org/licenses/afl-3.0.php Academic Free License (AFL 3.0)
+ * @author    Maksim T. <zapalm@yandex.com>
+ * @copyright 2010 Maksim T.
+ * @link      https://prestashop.modulez.ru/en/import-and-export-data/14-enhanced-import-tool.html The module's homepage
+ * @license   https://opensource.org/licenses/afl-3.0.php Academic Free License (AFL 3.0)
  */
 
 if (!defined('_CAN_LOAD_FILES_'))
@@ -25,6 +25,15 @@ define('MAX_COLUMNS', 6);
 // correct Mac error on eof
 @ini_set('auto_detect_line_endings', '1');
 
+/**
+ * Import processor and the tab controller.
+ *
+ * The improvement of AdminImport tab.
+ *
+ * @todo The class has some documentation in Russian (translate it to English).
+ *
+ * @author Maksim T. <zapalm@yandex.com>
+ */
 class zimportadmin extends AdminTab
 {
 	/** @var string наименование таба */

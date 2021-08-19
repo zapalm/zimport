@@ -2,12 +2,17 @@
 /**
  * Enhanced import tool: module for PrestaShop 1.3
  *
- * @author      zapalm <zapalm@ya.ru>
- * @copyright   (c) 2010, zapalm
- * @link        http://prestashop.modulez.ru/en/administrative-tools/14-enhanced-import-tool.html Module's homepage
- * @license     http://opensource.org/licenses/afl-3.0.php Academic Free License (AFL 3.0)
+ * @author    Maksim T. <zapalm@yandex.com>
+ * @copyright 2010 Maksim T.
+ * @link      https://prestashop.modulez.ru/en/import-and-export-data/14-enhanced-import-tool.html The module's homepage
+ * @license   https://opensource.org/licenses/afl-3.0.php Academic Free License (AFL 3.0)
  */
 
+/**
+ * Comment model.
+ *
+ * @author Maksim T. <zapalm@yandex.com>
+ */
 class Comment extends ObjectModel
 {
     public $id_product;
@@ -23,29 +28,34 @@ class Comment extends ObjectModel
     protected $table = 'product_comment';
     protected $identifier = 'id_product_comment';
 
-    public function __construct($id = null, $id_lang = null)
-    {
-        parent::__construct($id, $id_lang);
-    }
-
+    /**
+     * @inheritDoc
+     *
+     * @author Maksim T. <zapalm@yandex.com>
+     */
     public function getFields()
     {
         parent::validateFields();
+
         if (isset($this->id)) {
             $fields['id_product_comment'] = intval($this->id);
         }
-        $fields['id_product'] = pSQL($this->id_product);
+
+        $fields['id_product']  = pSQL($this->id_product);
         $fields['id_customer'] = pSQL($this->id_customer);
-        $fields['content'] = pSQL($this->content);
+        $fields['content']     = pSQL($this->content);
+
         return $fields;
     }
 
     /**
-     * существует ли комментарий
+     * Checks is a comment exists.
      *
      * @param int $id
      *
      * @return bool
+     *
+     * @author Maksim T. <zapalm@yandex.com>
      */
     public static function isCommentExists($id)
     {
