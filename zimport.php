@@ -20,11 +20,17 @@ class ZImport extends Module
     /** @var string The module's tab name. */
     private $module_tab;
 
+    /**
+     * @inheritDoc
+     *
+     * @author Maksim T. <zapalm@yandex.com>
+     */
     function __construct()
     {
-        $this->name = 'zimport';
-        $this->tab = 'Tools';
-        $this->version = '1.3.0';
+        $this->name       = 'zimport';
+        $this->tab        = 'Tools';
+        $this->version    = '1.3.0';
+        $this->author     = 'zapalm';
         $this->module_tab = 'zimportadmin';
 
         parent::__construct();
@@ -133,21 +139,41 @@ class ZImport extends Module
         return true;
     }
 
+    /**
+     * @inheritDoc
+     *
+     * @author Maksim T. <zapalm@yandex.com>
+     */
     public function getContent()
     {
         $output = '<h2>' . $this->displayName . '</h2>';
 
-        $output .= '
-            <fieldset style="width: 450px">
-                <legend><img src="../img/admin/manufacturers.gif" /> ' . $this->l('Module info') . '</legend>
-                <div id="dev_div">
-                    <span><b>' . $this->l('Version') . ':</b> ' . $this->version . '</span><br/>
-                    <span><b>' . $this->l('License') . ':</b> Academic Free License (AFL 3.0)</span><br/>
-                    <span><b>' . $this->l('Website') . ':</b> <a class="link" href="http://prestashop.modulez.ru/en/administrative-tools/14-enhanced-import-tool.html" target="_blank">prestashop.modulez.ru</a><br/>
-                    <span><b>' . $this->l('Author') . ':</b> zapalm <img src="../modules/' . $this->name . '/zapalm24x24.jpg" /><br/>
+        // The block about the module (version: 2021-08-15)
+        $modulezUrl    = 'https://prestashop.modulez.ru' . (Language::getIsoById(false === empty($GLOBALS['cookie']->id_lang) ? $GLOBALS['cookie']->id_lang : Context::getContext()->language->id) === 'ru' ? '/ru/' : '/en/');
+        $modulePage    = $modulezUrl . '14-enhanced-import-tool.html';
+        $licenseTitle  = 'Academic Free License (AFL 3.0)';
+        $output       .=
+            (version_compare(_PS_VERSION_, '1.6', '<') ? '<br class="clear" />' : '') . '
+            <div class="panel">
+                <div class="panel-heading">
+                    <img src="' . $this->_path . 'logo.gif" width="16" height="16" alt=""/>
+                    ' . $this->l('Module info') . '
                 </div>
-            </fieldset>
-            <br class="clear" />
+                <div class="form-wrapper">
+                    <div class="row">               
+                        <div class="form-group col-lg-4" style="display: block; clear: none !important; float: left; width: 33.3%;">
+                            <span><b>' . $this->l('Version') . ':</b> ' . $this->version . '</span><br/>
+                            <span><b>' . $this->l('License') . ':</b> ' . $licenseTitle . '</span><br/>
+                            <span><b>' . $this->l('Website') . ':</b> <a class="link" href="' . $modulePage . '" target="_blank">prestashop.modulez.ru</a></span><br/>
+                            <span><b>' . $this->l('Author') . ':</b> ' . $this->author . '</span><br/><br/>
+                        </div>
+                        <div class="form-group col-lg-2" style="display: block; clear: none !important; float: left; width: 16.6%;">
+                            <img width="250" alt="' . $this->l('Website') . '" src="https://prestashop.modulez.ru/img/marketplace-logo.png" />
+                        </div>
+                    </div>
+                </div>
+            </div> ' .
+            (version_compare(_PS_VERSION_, '1.6', '<') ? '<br class="clear" />' : '') . '
         ';
 
         return $output;
