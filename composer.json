@@ -1,0 +1,17 @@
+{
+  "name": "zapalm/zimport",
+  "type": "prestashop-module",
+  "homepage": "https://prestashop.modulez.ru/en/import-and-export-data/14-enhanced-import-tool.html",
+  "authors": [
+    {
+      "name": "Maksim T.",
+      "email": "zapalm@yandex.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.4"
+  },
+  "config": {
+    "preferred-install": "dist"
+  }
+}
