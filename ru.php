@@ -130,5 +130,5 @@ $_MODULE['<{zimport}prestashop>zimportadmin_980da98409d058c365664ff7ea33dd6b'] =
 $_MODULE['<{zimport}prestashop>zimportadmin_c8cfbbbe4253e14390b2b14d7e60d9c8'] = 'Начать импорт данных';
 $_MODULE['<{zimport}prestashop>zimportadmin_dfd284418acdc1a95d417d10cd67cd27'] = 'файл не имеет расширения';
 $_MODULE['<{zimport}prestashop>zimportadmin_551746895fb66f979bce758992475bfc'] = 'Файл не выбран';
-$_MODULE['<{zimport}prestashop>zimportadmin_3318410b5ad042da55458bb2d256f589'] = 'во времяя загрузки и копирования файла произошла ошибка';
+$_MODULE['<{zimport}prestashop>zimportadmin_3318410b5ad042da55458bb2d256f589'] = 'во время загрузки и копирования файла произошла ошибка';
 $_MODULE['<{zimport}prestashop>zimportadmin_628fbfc7462b2873bb027ee850185859'] = 'значение не выбрано';
